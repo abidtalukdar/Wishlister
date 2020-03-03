@@ -3,7 +3,7 @@
 
 <h3>My Wishlist:</h3>
 
-<%= @wishlist_items.each do |wishlist_item| %>
+<% @wishlist_items.each do |wishlist_item| %>
     <ul>
         <li>
             <%= link_to "#{wishlist_item.item.name - wishlist_item.item.description}", item_path(wishlist_item.item) %>

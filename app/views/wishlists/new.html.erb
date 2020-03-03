@@ -16,10 +16,16 @@
 
 <div>
     <%= button_to "Cancel Wishlist", wishlists_path, method: :get %>
-</div>
+</div><br>
 
+<div>
     <% if @wishlist.errors %>
-        <% @wishlist.errors.full_messages do |error| %>
-            <%= error %>
+        <% @wishlist.errors.full_messages.each do |error| %>
+        <div>
+            <li>
+                <%= error %>
+            </li>
+        </div>
         <% end %>
     <% end %>
+</div>

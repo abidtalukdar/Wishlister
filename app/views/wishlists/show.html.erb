@@ -1,0 +1,17 @@
+<h1><%= @wishlist.name %></h1>
+<h2><%= @wishlist.category %></h2>
+
+<h3>My Wishlist:</h3>
+
+<%= @wishlist_items.each do |wishlist_item| %>
+    <ul>
+        <li>
+            <%= link_to "#{wishlist_item.item.name - wishlist_item.item.description}", item_path(wishlist_item.item) %>
+            <%= button_to "Remove Item from Wishlist", wishlist_item_path(wishlist_item), method: :delete %>
+        </li>
+    </ul>
+<% end %>
+
+
+<%= button_to "Delete Wishlist", wishlist_path(@wishlist), method: :delete %><br>
+<%= button_to "Return to Wishlist Index", wishlists_path, method: :get %>

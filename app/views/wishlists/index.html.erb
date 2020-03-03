@@ -1,0 +1,12 @@
+<h1>Wishlists</h1>
+
+<% @wishlists.each do |wishlist| %>
+    <ul>
+        <li>
+            <%= link_to wishlist.name, wishlist_path(wishlist) %>
+        </li>
+    </ul>
+<% end %>
+
+<%= button_to "Create a New Wishlist", new_wishlist_path, method: :get %>
+<%= button_to "View Items", items_path, method: :get %>

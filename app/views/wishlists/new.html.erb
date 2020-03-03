@@ -1,0 +1,25 @@
+<h1>Create Your Wishlist</h1>
+
+<%= form_for(@wishlist) do |f| %>
+    <div>
+        <%= f.label "What would you like to name your Wishlist?" %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label "What is this Wishlist for?"%><br>
+        <%= f.text_field :category %>
+    </div>
+    <div>
+        <%= f.submit "Create Wishlist" %>
+    </div>
+<% end %>
+
+<div>
+    <%= button_to "Cancel Wishlist", wishlists_path, method: :get %>
+</div>
+
+    <% if @wishlist.errors %>
+        <% @wishlist.errors.full_messages do |error| %>
+            <%= error %>
+        <% end %>
+    <% end %>

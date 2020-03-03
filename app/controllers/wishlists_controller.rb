@@ -1,5 +1,7 @@
 class WishlistsController < ApplicationController
 
+    CATEGORY = ["Wedding", "Bridal Shower", "Baby Shower", "Bat Mitzvah", "Quinceanera", "Birthday", "Christmas"]
+
     def index
         @wishlists = Wishlist.all
     end
@@ -29,6 +31,10 @@ class WishlistsController < ApplicationController
     end
     
     def update
+        @wishlist = Wishlist.find(params[:id])
+
+        @wishlist.update(wishlist_params)
+        redirect_to wishlist_path(@wishlist)
     end
     
     def destroy

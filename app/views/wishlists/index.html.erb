@@ -1,12 +1,18 @@
-<h1>Wishlists</h1>
+<h1>My Wishlists</h1>
 
-<% @wishlists.each do |wishlist| %>
-    <ul>
-        <li>
-            <%= link_to wishlist.name, wishlist_path(wishlist) %>
-        </li>
-    </ul>
-<% end %>
-
+<div>
+    <% if @wishlists.count == 0 %>
+        <%= "You currently do not have any wishlists." %><br>
+    <% else %>
+        <% @wishlists.each do |wishlist| %>
+            <ul>
+                <li>
+                    <%= link_to wishlist.name, wishlist_path(wishlist) %><br>
+                </li>
+            </ul>
+        <% end %>
+    <% end %>
+</div>
+<br>
 <%= button_to "Create a New Wishlist", new_wishlist_path, method: :get %>
 <%= button_to "View Items", items_path, method: :get %>

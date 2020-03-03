@@ -1,0 +1,35 @@
+<h1>Edit Wishlist</h1>
+
+<div>
+    <%= form_for(@wishlist) do |f| %>
+        <div>
+            <%= f.label "Would you like to change the Wishlist's Name?" %><br>
+            <%= f.text_field :name %>
+        </div>
+        <br>
+        <div>
+            <%= f.label "Would you like to change the Occasion for the Wishlist?"%><br>
+            <%= f.select :category, options_for_select(["Wedding", "Bridal Shower", "Baby Shower", "Bat Mitzvah", "Quinceanera", "Birthday", "Christmas"]) %>
+        </div>
+        <br>
+        <div>
+            <%= f.submit "Complete Editing Wishlist" %>
+        </div>
+    <% end %>
+</div>
+
+<div>
+    <%= button_to "Cancel Editing Wishlist", wishlists_path, method: :get %>
+</div>
+
+<div>
+    <% if @wishlist.errors %>
+        <% @wishlist.errors.full_messages.each do |error| %>
+        <div>
+            <li>
+                <%= error %>
+            </li>
+        </div>
+        <% end %>
+    <% end %>
+</div>

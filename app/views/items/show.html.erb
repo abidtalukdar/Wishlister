@@ -6,6 +6,15 @@
 
 <%# add image of item %>
 
-<%# add button for adding item to wishlist %>
+<h4><%= "Add #{@item.name} to:" %></h4>
 
-<%# add return to item index button %>
+<div>
+    <%= form_for(@wishlist_item) do |f| %>
+            <%= f.collection_select :wishlist_id, Wishlist.all, :id, :name %>
+            <%= f.hidden_field :item_id, value: @item.id %>
+            <%= button_to "Add Item", wishlist_items_path, method: :post %>
+    <% end %>
+</div>
+<br>
+
+<%= button_to "Return to Item's Index", items_path, method: :get  %>

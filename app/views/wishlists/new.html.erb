@@ -5,13 +5,13 @@
         <%= f.label "What would you like to name your Wishlist?" %><br>
         <%= f.text_field :name %>
     </div>
-    <div>
-        <%= f.label "What is this Wishlist for?"%><br>
-        <%= f.text_field :category %>
-    </div>
+    <br><div>
+        <%= f.label "What is the Occasion for the Wishlist?"%><br>
+        <%= f.select :category, options_for_select(["Wedding", "Bridal Shower", "Baby Shower", "Bat Mitzvah", "Quinceanera", "Birthday", "Christmas"]) %>
+    </div><br>
     <div>
         <%= f.submit "Create Wishlist" %>
-    </div>
+    </div><br>
 <% end %>
 
 <div>

@@ -1,16 +1,15 @@
 class WishlistsController < ApplicationController
 
-    CATEGORY = ["Wedding", "Bridal Shower", "Baby Shower", "Bat Mitzvah", "Quinceanera", "Birthday", "Christmas"]
+    skip_before_action :verify_authenticity_token
 
     def index
-        @wishlists = Wishlist.all
+        @wishlists = Wishlist.where(user_id: @logged_in_user_id)
     end
 
     def show
         @wishlist = Wishlist.find(params[:id])
         @items = Item.all
         @wishlist_items = @wishlist.wishlist_items
-        # @wishlist_item = WishlistItem.new <- only add this if you want users to add on the Wishlist show page
     end
 
     def new
@@ -19,6 +18,7 @@ class WishlistsController < ApplicationController
 
     def create
         @wishlist = Wishlist.new(wishlist_params)
+        @wishlist.user_id = @logged_in_user_id
         if @wishlist.save
             redirect_to wishlist_path(@wishlist)
         else
@@ -48,4 +48,5 @@ class WishlistsController < ApplicationController
         def wishlist_params
             params.require(:wishlist).permit(:name, :category)
         end
+
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>Wishlister</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <header>
+      <% if @successful_log_in %>
+        <p>Hello, <%= @logged_in_user.username.titleize %></p>
+        <%= button_to "Log out", log_out_path, method: :delete %>
+      <% else %>
+        <%= link_to "Log in", new_login_path %>
+        <%= link_to "Sign up", new_user_path %>
+      <% end %>
+
+      <% if @errors && @errors.any? %>
+        <ul class="errors">
+          <% @errors.each do |error| %>
+          <li>
+            <%= error %>
+          </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

@@ -10,9 +10,9 @@
 
 <div>
     <%= form_for(@wishlist_item) do |f| %>
-            <%= f.collection_select :wishlist_id, Wishlist.all, :id, :name %>
-            <%= f.hidden_field :item_id, value: @item.id %>
-            <%= button_to "Add Item", wishlist_items_path, method: :post %>
+        <%= f.collection_select :wishlist_id, Wishlist.where(user_id: @logged_in_user_id), :id, :name %>
+        <%= f.hidden_field :item_id, value: @item.id %>
+        <%= button_to "Add Item", wishlist_items_path, method: :post %>
     <% end %>
 </div>
 <br>

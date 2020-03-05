@@ -1,0 +1,15 @@
+<h1>Wishlister Sign Up</h1>
+
+<%= form_for @user, html: { class: "auth_form" } do |f| %>
+    <ul>
+        <li>
+            <%= f.label :username %>
+            <%= f.text_field :username %>
+        </li>
+        <li>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </li>
+    </ul>
+    <%= f.submit "Sign Up" %>
+<% end %>

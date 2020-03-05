@@ -7,7 +7,7 @@
         <% @wishlists.each do |wishlist| %>
             <ul>
                 <li>
-                    <%= link_to wishlist.name, wishlist_path(wishlist) %><br>
+                    <%= link_to wishlist.name.titleize, wishlist_path(wishlist) %><br>
                 </li>
             </ul>
         <% end %>

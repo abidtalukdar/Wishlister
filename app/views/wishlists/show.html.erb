@@ -17,6 +17,7 @@
 </div>
 <br>
 
+<%= button_to "View Items to Add", items_path, method: :get %>
 <%= button_to "Edit Wishlist", edit_wishlist_path(@wishlist), method: :get %>
 <%= button_to "Delete Wishlist", wishlist_path(@wishlist), method: :delete %>
 <%= button_to "Return to Wishlist Index", wishlists_path, method: :get %>

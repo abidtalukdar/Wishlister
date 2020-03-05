@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+/* 
+ body {
+    margin: 0;
+    padding: 0;
+    background: #000 linear-gradient(#222, #666) fixed;
+    color: #fff;
+    font-family: 'Arial Rounded MT Bold', sans-serif
+  }
+  
+.errors {
+  list-style-type: none;
+  border-color: #ff0000;
+  background-color: #ff000055;
+} */

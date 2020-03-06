@@ -1,18 +1,34 @@
-<h1>My Wishlists</h1>
 
-<div>
-    <% if @wishlists.count == 0 %>
-        <%= "You currently do not have any wishlists." %><br>
-    <% else %>
-        <% @wishlists.each do |wishlist| %>
-            <ul>
-                <li>
-                    <%= link_to wishlist.name.titleize, wishlist_path(wishlist) %><br>
-                </li>
-            </ul>
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        My Wishlists
+      </h1>
+        <% if @wishlists.count == 0 %>
+            <%= "You currently do not have any wishlists." %><br>
+        <% else %>
+            <% @wishlists.each do |wishlist| %>
+                <ul>
+                    <li>
+                        <%= link_to wishlist.name.titleize, wishlist_path(wishlist) %><br>
+                    </li>
+                </ul>
+            <% end %>
         <% end %>
-    <% end %>
-</div>
-<br>
-<%= button_to "Create a New Wishlist", new_wishlist_path, method: :get %>
-<%= button_to "View Items", items_path, method: :get %>
+      
+        <%= button_to "Create a New Wishlist", new_wishlist_path, method: :get %> 
+        <%= button_to "View Items", items_path, method: :get %>
+      
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Wishlister</strong> by Abid & Antonio</a><br><strong>Styled</strong> by Antonio & Abid<br>
+      <em>Double A Battery Productions</em>
+    </p>
+  </div>
+</footer>

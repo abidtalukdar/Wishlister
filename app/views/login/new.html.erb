@@ -1,15 +1,41 @@
-<h1>Wishlister Log In</h1>
 
-<%= form_tag login_index_path, class: "auth-form" do %>
-   <ul>
-    <li>
-      <%= label_tag :username %>
-      <%= text_field_tag :username %>
-    </li>
-    <li>
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-    </li>
-  </ul>
-  <%= submit_tag "Log in" %>
-<% end %>
+<section class="hero is-medium is-primary is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Wishlister
+      </h1>
+      <h2 class="subtitle">
+        Log In
+      </h2>
+    </div>
+  </div>
+</section>
+
+<div class="container is-fluid has-text-centered">
+  <div class="notification">
+  <h1>Wishlister Log In</h1><br>
+    <%= form_tag login_index_path, class: "auth-form" do %>
+      <ul>
+        <li>
+          <%= label_tag :username %>
+          <%= text_field_tag :username %>
+        </li>
+        <li>
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </li>
+      </ul>
+      <%= submit_tag "Log in" %>
+    <% end %>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Wishlister</strong> by Abid & Antonio</a><br><strong>Styled</strong> by Antonio & Abid<br>
+      <em>Double A Battery Productions</em>
+    </p>
+  </div>
+</footer>

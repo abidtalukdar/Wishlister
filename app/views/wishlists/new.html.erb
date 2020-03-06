@@ -1,22 +1,35 @@
-<h1>Create Your Wishlist</h1>
 
-<%= form_for(@wishlist) do |f| %>
-    <div>
-        <%= f.label "What would you like to name your Wishlist?" %><br>
-        <%= f.text_field :name %>
+
+<section class="hero is-medium is-dark is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Create Your Wishlist
+      </h1>
+
+        <%= form_for(@wishlist) do |f| %>
+            <div>
+                <%= f.label "What would you like to name your Wishlist?" %><br>
+                <%= f.text_field :name %>
+            </div>
+            <br><div>
+                <%= f.label "What is the Occasion for the Wishlist?"%><br>
+                <%= f.select :category, options_for_select(["Wedding", "Bridal Shower", "Baby Shower", "Bat Mitzvah", "Quinceanera", "Birthday", "Christmas"]) %>
+            </div><br>
+            <div>
+                <%= f.submit "Create Wishlist" %>
+            </div><br>
+        <% end %>
+
+        <div>
+            <%= button_to "Cancel Wishlist", wishlists_path, method: :get %>
+        </div><br>
     </div>
-    <br><div>
-        <%= f.label "What is the Occasion for the Wishlist?"%><br>
-        <%= f.select :category, options_for_select(["Wedding", "Bridal Shower", "Baby Shower", "Bat Mitzvah", "Quinceanera", "Birthday", "Christmas"]) %>
-    </div><br>
-    <div>
-        <%= f.submit "Create Wishlist" %>
-    </div><br>
-<% end %>
+  </div>
+</section>
 
-<div>
-    <%= button_to "Cancel Wishlist", wishlists_path, method: :get %>
-</div><br>
+
+
 
 <div>
     <% if @wishlist.errors %>
@@ -29,3 +42,13 @@
         <% end %>
     <% end %>
 </div>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Wishlister</strong> by Abid & Antonio </a><br><strong>Styled</strong> by Antonio & Abid<br>
+      <em>Double A Battery Productions</em>
+    </p>
+  </div>
+</footer>
+

@@ -1,11 +1,29 @@
-<h1>All Items</h1>
 
-<% @items.each do |item| %>
-    <ul>
-        <li>
-            <%= link_to item.name, item_path(item) %>
-        </li>
-    </ul>
-<% end %>
+<section class="hero is-medium is-danger is-bold">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        All Items
 
-<%= button_to "View My Wishlists", wishlists_path, method: :get %>
+        <% @items.each do |item| %>
+            <ul>
+                <li>
+                    <%= link_to item.name, item_path(item) %>
+                </li>
+            </ul>
+        <% end %>
+
+        <%= button_to "View My Wishlists", wishlists_path, method: :get %>
+      </h1>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Wishlister</strong> by Abid & Antonio </a><br><strong>Styled</strong> by Antonio & Abid<br>
+      <em>Double A Battery Productions</em>
+    </p>
+  </div>
+</footer>

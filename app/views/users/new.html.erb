@@ -1,4 +1,13 @@
-<h1>Wishlister Sign Up</h1>
+
+<section class="hero is-info">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Wishlister Sign Up
+      </h1>
+    </div>
+  </div>
+</section>
 
 <%= form_for @user, html: { class: "auth_form" } do |f| %>
     <ul>
@@ -13,3 +22,12 @@
     </ul>
     <%= f.submit "Sign Up" %>
 <% end %>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Wishlister</strong> by Abid & Antonio </a><br><strong>Styled</strong> by Antonio & Abid<br>
+      <em>Double A Battery Productions</em>
+    </p>
+  </div>
+</footer>
